@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateSignInTokens < ActiveRecord::Migration[7.1]
   def change
     create_table :sign_in_tokens do |t|
