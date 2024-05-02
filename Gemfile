@@ -16,6 +16,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+  gem 'solargraph', require: false
 end
 
 group :development do
