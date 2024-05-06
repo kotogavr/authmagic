@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Current < ActiveSupport::CurrentAttribute
+class Current < ActiveSupport::CurrentAttributes
   attribute :session
-  delegete :user, to: :session, allow_nil: true
+  delegate :user, to: :session, allow_nil: true
 end
