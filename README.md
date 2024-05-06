@@ -1,24 +1,5 @@
-# README
+# Hello World
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a test repo made for my blog which aims to demonstrate the most basic passwordless authentication (which is also called magic link authentication) in Ruby on Rails.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can find the detailed explanation of what is going on here in my [blog post](https://kotogavr.vercel.app/blog/how-to-make-passwordless-auth).
