@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  skip_before_action :authenticate, only: %i[new create verify]
+
   def new; end
 
   def create
@@ -11,9 +13,10 @@ class SessionsController < ApplicationController
 
   def verify
     begin
-      user = SignInToken.find_signed!(params[:sid])
+      user = SignInToken.find_signed!(params[:sid]).user
     rescue StandardError
-      redirect_to login_path, alert: 'Invalid or expired token'
+      redirect_to(login_path, alert: 'Invalid or expired token')
+      return
     end
     session_record = user.sessions.create!
     cookies.signed.permanent[:session_token] = { value: session_record.id, httponly: true }
@@ -21,5 +24,8 @@ class SessionsController < ApplicationController
     redirect_to root_path, notice: 'Successfully signed in'
   end
 
-  def destroy; end
+  def destroy
+    # selete curent user session
+    # session.delete(:session_token)
+  end
 end
