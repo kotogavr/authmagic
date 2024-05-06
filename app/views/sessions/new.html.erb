@@ -1,10 +1,10 @@
-<h1>Sign up</h1>
+<h1>Sign in</h1>
 
 <%= form_with(url: sessions_path) do |form| %>
 
   <div>
     <%= form.label :email, style: 'display:block' %>
-    <%= form.email_field :email, value: @user.email, required: true, autofocus: true %>
+    <%= form.email_field :email, required: true, autofocus: true %>
   </div>
 
   <div>
