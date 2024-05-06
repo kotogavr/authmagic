@@ -25,7 +25,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # selete curent user session
-    # session.delete(:session_token)
+    Current.user.sessions.find(params[:id]).destroy
+
+    redirect_to(login_path, notice: "You're logged out")
   end
 end
